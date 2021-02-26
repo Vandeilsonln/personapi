@@ -40,6 +40,12 @@ public class PersonService {
                 .collect(Collectors.toList());
     }
 
+    private Person verifyIfExists(Long id) throws PersonNotFoundException {
+        return personRepository.findById(id)
+                .orElseThrow(() -> new PersonNotFoundException(id));
+    }
+
+
     public PersonDTO findById(Long id) throws PersonNotFoundException{
         Person person = verifyIfExists(id);
 
@@ -72,4 +78,5 @@ public class PersonService {
                 .message(message + id)
                 .build();
     }
+
 }
