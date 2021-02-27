@@ -6,18 +6,18 @@ import com.digitalinnovationone.personapi.enums.PhoneType;
 
 public class PhoneUtils {
 
-    private static final String PHONE_NUMBER = "119988-7744";
-    private static final PhoneType PHONE_TYPE = PhoneType.MOBILE;
-    private static final long PHONE_ID = 1L;
+    public static final String PHONE_NUMBER = "1198765432";
+    public static final PhoneType PHONE_TYPE = PhoneType.MOBILE;
+    public static final long PHONE_ID = 1L;
 
-    public static PhoneDTO  createFakeDTO() {
+    public static PhoneDTO createFakeDTO() {
         return PhoneDTO.builder()
                 .number(PHONE_NUMBER)
                 .type(PHONE_TYPE)
                 .build();
     }
 
-    public static Phone createFakeEntity(){
+    public static Phone createFakeEntity() {
         return Phone.builder()
                 .id(PHONE_ID)
                 .number(PHONE_NUMBER)
